@@ -1,2 +1,1 @@
-# SOL LEWITT作品系统的结构设计
-作品目标为线条与自然
+# Processing 作品收集与提交
