@@ -1,0 +1,48 @@
+import com.hamoid.*;
+
+VideoExport videoExport;
+
+PImage img;
+int rectX=-9-width, i;
+int speed = 18;
+//color eb5e5e 404040
+void myRect(int rectX) {
+  stroke(0);
+  strokeWeight(1);
+  for (i=0; i<=2*width+9; i+= 16) {
+    fill(0);
+    rectMode(CENTER);
+    rect(rectX+i, height/2, 14, height);
+  }
+}
+
+void setup() {
+  size(500, 500);
+  smooth();
+  background(#404040);
+  img = loadImage("Mydeer.png");
+  image(img, 90, 40);
+  frameRate(8);
+  videoExport = new VideoExport(this, "myDeer.mp4");
+  videoExport.setFrameRate(8);  
+  videoExport.startMovie();
+}
+
+void draw() {
+  background(#404040);
+  rectX+= speed;
+  if (rectX-18 > width) { 
+    delay(1000);
+    rectX = -9-width;
+  }
+  image(img, 90, 40);
+  myRect(rectX);
+  videoExport.saveFrame();
+}
+
+void keyPressed() {
+  if (key == 'q') {
+    videoExport.endMovie();
+    exit();
+  }
+}
