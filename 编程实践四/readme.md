@@ -1,3 +1,4 @@
 # 这是编程实践四的作业（二选一）
 
-我写的是Animated_Optical_Illusion
+我写的是Animated_Optical_Illusion   deer动图 总帧数8 黑边:空白边 =8-1:1
+规律： 黑边:空白边 = 动图总帧数-当前显示的帧（即一帧）:当前显示的帧（即一帧）
